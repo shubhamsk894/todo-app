@@ -5,6 +5,7 @@ import { message } from "antd";
 import { DEFAULT_LIST_ITEM } from "./constants";
 import { BrowserRouter, Route } from "react-router-dom";
 import BottomNav from "./views/bottom-nav";
+import storage from "./utils/storage";
 
 const App = () => {
   const [task, setTask] = useState("");
@@ -21,6 +22,7 @@ const App = () => {
         Object.assign({}, DEFAULT_LIST_ITEM, { name: task })
       ];
       setTaskList(newLst);
+      localStorage["tasklist"] = JSON.stringify(newLst);
       message.success(`'${task}' is added successfully!`);
       setTask("");
     },
@@ -32,6 +34,7 @@ const App = () => {
 
     deleteHandler: task => e => {
       setTaskList(taskList.filter(item => item !== task));
+
       message.error(`'${task.name}' is deleted successfully!`);
     },
 
