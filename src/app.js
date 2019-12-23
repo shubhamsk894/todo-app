@@ -22,7 +22,7 @@ const App = () => {
         Object.assign({}, DEFAULT_LIST_ITEM, { name: task })
       ];
       setTaskList(newLst);
-      localStorage["tasklist"] = JSON.stringify(newLst);
+      storage.set("todolist", newLst);
       message.success(`'${task}' is added successfully!`);
       setTask("");
     },
@@ -33,7 +33,9 @@ const App = () => {
     list: taskList,
 
     deleteHandler: task => e => {
-      setTaskList(taskList.filter(item => item !== task));
+      let updatedList = taskList.filter(item => item !== task);
+      setTaskList(updatedList);
+      storage.set("todolist", updatedList);
 
       message.error(`'${task.name}' is deleted successfully!`);
     },
