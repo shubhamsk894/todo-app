@@ -47,7 +47,9 @@ const App = () => {
         ...task,
         done: !task.done
       };
-      setTaskList([...taskList]);
+      let updatedList = [...taskList];
+      setTaskList(updatedList);
+      storage.set("todolist", updatedList);
     }
   };
 
