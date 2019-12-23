@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./views/header";
 import TaskList from "./views/task-list";
 import { message } from "antd";
@@ -10,6 +10,12 @@ import storage from "./utils/storage";
 const App = () => {
   const [task, setTask] = useState("");
   const [taskList, setTaskList] = useState([]);
+
+  useEffect(() => {
+    storage.get("todolist").then(data => {
+      setTaskList(data);
+    });
+  }, []);
 
   const headerProps = {
     placeholder: "add task here",

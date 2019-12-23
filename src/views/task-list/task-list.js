@@ -18,7 +18,6 @@ const TaskList = ({
           itemLayout="horizontal"
           dataSource={list}
           renderItem={item => {
-            console.log(item);
             return (
               <List.Item
                 actions={[
