@@ -18,7 +18,7 @@ const App = () => {
   }, []);
 
   const headerProps = {
-    placeholder: "add task here",
+    placeholder: "What needs to be done ?",
     onChange: e => {
       setTask(e.target.value);
     },
@@ -90,7 +90,7 @@ const App = () => {
             />
           )}
         />
-        <BottomNav />
+        <BottomNav className="bottomnav" />
       </BrowserRouter>
     </div>
   );

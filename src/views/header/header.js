@@ -13,8 +13,8 @@ const Header = props => {
     <div>
       <Row>
         <Col span={24}>
-          <Title level={2} style={{ textAlign: "center" }} type="primary">
-            React To-Do App
+          <Title level={1} style={{ textAlign: "center", color: "#46b980" }}>
+            todos
           </Title>
         </Col>
       </Row>
