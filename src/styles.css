@@ -9,7 +9,8 @@
 #root {
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(to right, #400f85, #0d021c);
+  background: #e9ebee;
+  /* background-image: linear-gradient(to right, #400f85, #0d021c); */
   height: 100%;
   display: flex;
 }
