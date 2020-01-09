@@ -28,7 +28,5 @@ const storage = {
   )
 };
 
-localStorage["1"] = "12";
-storage.delete("1").then(console.log);
-console.log(localStorage);
+
 export default storage;
